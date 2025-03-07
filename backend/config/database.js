@@ -5,7 +5,12 @@ const sequelize = new Sequelize('freedb_myOctalogic', 'freedb_octalogic-user', '
   host: 'sql.freedb.tech',
   dialect: 'mysql', 
   port:3306,
-  
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false, // Use this only if you trust the database server
+    },
+  },
   logging: false,
 });
 
